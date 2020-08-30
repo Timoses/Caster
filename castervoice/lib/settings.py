@@ -479,7 +479,7 @@ def initialize():
     # calculate prerequisites
     SYSTEM_INFORMATION = _get_platform_information()
     _BASE_PATH = str(Path(__file__).resolve().parent.parent)
-    _USER_DIR = user_data_dir(appname="caster", appauthor=False)
+    _USER_DIR = str(Path('/Users/Timoses/.config/caster'))
     _SETTINGS_PATH = str(Path(_USER_DIR).joinpath("settings/settings.toml"))
 
     for directory in ["data", "rules", "transformers", "hooks", "sikuli", "settings"]:
