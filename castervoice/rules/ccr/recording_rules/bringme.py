@@ -195,10 +195,16 @@ class BringRule(BaseSelfModifyingRule):
             Popen([BringRule._explorer_path, folder])
 
     def _bring_program(self, program):
-        Popen(program)
+        if sys.platform == "darwin":
+            Popen(['open', '-a', program])
+        else:
+            Popen(program)
 
     def _bring_file(self, file):
-        threading.Thread(target=os.startfile, args=(file, )).start()  # pylint: disable=no-member
+        if sys.platform == "darwin":
+            threading.Thread(target=subprocess.Popen, args=([['open', '-t', file]])).start()  # pylint: disable=no-member
+        else:
+            threading.Thread(target=os.startfile, args=(file, )).start()  # pylint: disable=no-member
 
     # =================== BringMe default setup:
     _bm_defaults = {
