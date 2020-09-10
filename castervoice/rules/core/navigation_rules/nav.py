@@ -112,9 +112,9 @@ class Navigation(MergeRule):
             R(Function(navigation.duple_keep_clipboard), rspec="duple"),
         "Kraken":
             R(Key("c-space"), rspec="Kraken"),
-        "undo [<nnavi10>]":
+        "revert [<nnavi10>]":
             R(Key("c-z"))*Repeat(extra="nnavi10"),
-        "redo [<nnavi10>]":
+        "invert [<nnavi10>]":
             R(
                 ContextAction(default=Key("c-y")*Repeat(extra="nnavi10"),
                               actions=[
