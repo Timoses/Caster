@@ -96,8 +96,8 @@ class Navigation(MergeRule):
             R(Function(navigation.drop_keep_clipboard), rspec="spark"),
         "splat [<splatdir>] [<nnavi10>]":
             R(Key("c-%(splatdir)s"), rspec="splat")*Repeat(extra="nnavi10"),
-        "deli [<nnavi50>]":
-            R(Key("del/5"), rspec="deli")*Repeat(extra="nnavi50"),
+#       "deli [<nnavi50>]":
+#           R(Key("del/5"), rspec="deli")*Repeat(extra="nnavi50"),
         "clear [<nnavi50>]":
             R(Key("backspace/5:%(nnavi50)d"), rspec="clear"),
         SymbolSpecs.CANCEL:
@@ -164,8 +164,8 @@ class Navigation(MergeRule):
             R(Key("c-home:%(nnavi10)s")),
         "dunce wally [<nnavi10>]":
             R(Key("c-end:%(nnavi10)s")),
-        "bird [<nnavi500>]":
-            R(Key("c-left:%(nnavi500)s")),
+#       "bird [<nnavi500>]":
+#           R(Key("c-left:%(nnavi500)s")),
         "firch [<nnavi500>]":
             R(Key("c-right:%(nnavi500)s")),
         "brick [<nnavi500>]":

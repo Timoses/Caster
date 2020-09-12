@@ -47,6 +47,6 @@ class Again(MappingRule):
             blocking=False).execute()
 
 
-def get_rule():
-    details = RuleDetails(name="repeat that")
-    return Again, details
+#def get_rule():
+#    details = RuleDetails(name="repeat that")
+#    return Again, details
