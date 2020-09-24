@@ -56,6 +56,12 @@ class Plugin():
             self._log.info("Loading ...")
             for grammar in self._grammars:
                 grammar.load()
+                print("###################### ", str(grammar.name))
+                for rule in grammar.rules:
+                    print("---------------------- ", str(rule.name))
+                    print(rule.element)
+
+                    print(rule.element.element_tree_string())
 
             self._loaded = True
 
