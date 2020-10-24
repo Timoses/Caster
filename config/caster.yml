@@ -33,4 +33,4 @@ contexts:
   - name: global
     plugins:
       - casterplugin.bringme
-      - casterplugin.dictation
+        #- casterplugin.dictation

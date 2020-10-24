@@ -6,12 +6,15 @@ from dragonfly import (
         DictListRef, Literal, Dictation
     )
 
+from castervoice.client.action import ClientAction
+
 
 class BringMeBase(MappingRule):
 
     """Docstring for BringMeBase. """
 
     type = "base"
+    _name = 'bringi'
 
     def __init__(self, entities):
         """TODO: to be defined. """
@@ -27,7 +30,9 @@ class BringMeBase(MappingRule):
             "<entity_type> to bring me as <entity_name>":
                 Function(self.bring_me_as),
             "remove <entity_name> from bring me":
-                Function(self.bring_me_remove)
+                Function(self.bring_me_remove),
+            "my test":
+                ClientAction.create(Function(test))
         }
 
         self.extras = [
@@ -88,3 +93,9 @@ class BringMeBase(MappingRule):
 
     def _bring_me_as(self, entity_name):
         raise NotImplementedError("Let me bring new stuff!")
+
+def test(self, *args, **kwargs):
+    print("oh my god it worked")
+    print(args)
+    print(kwargs)
+
